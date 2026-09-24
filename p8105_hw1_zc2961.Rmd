@@ -6,7 +6,7 @@ output: github_document
 ---
 # Problem 1
 ```{r}
-library(ggplot2)
+library(tidyverse)
 data("penguins", package = "palmerpenguins")
 var_names <- paste0("`", names(penguins), "`", collapse = ", ")
 ```
@@ -16,3 +16,11 @@ The `penguins` dataset contains data for different penguin species. Important va
 The size of this dataset is `r nrow(penguins)` rows (observations) and `r ncol(penguins)` columns (variables). 
 
 The mean flipper length for the penguins is `r round(mean(penguins$flipper_length_mm, na.rm = TRUE), 2)` mm.
+
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point()
+
+ggsave("penguins_scatterplot.png")
+```
+

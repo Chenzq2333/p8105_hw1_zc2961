@@ -24,3 +24,17 @@ ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)
 ggsave("penguins_scatterplot.png")
 ```
 
+
+# Problem 2
+
+```{r}
+p2_df = tibble(
+  norm_samp = rnorm(10),
+  log_vec = norm_samp > 0,
+  char_vec = letters[1:10],
+  fac_vec = factor(rep(c("Level A", "Level B", "Level C"), length.out = 10))
+)
+```
+
+
+

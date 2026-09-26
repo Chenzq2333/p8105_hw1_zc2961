@@ -49,4 +49,8 @@ as.numeric(pull(p2_df, char_vec))
 as.numeric(pull(p2_df, fac_vec))
 ```
 
+- Logical variables are successfully coerced into numeric values(1 for True and 0 for False). R implicitly converts them to numbers and calculates the proportion of TRUE values.
+- Character variables cannot be coerced into numbers and are converted to NAs, thus taking the mean of a character vector fails and returns NA.
+- Factor variables are coerced into their underlying integer representations (e.g., 1, 2, 3 corresponding to their factor levels). However, taking the mean of the original factor directly still fails because R strictly treats factors as categorical data, preventing meaningless arithmetic operations unless explicitly coerced.
+
 
